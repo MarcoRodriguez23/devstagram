@@ -24,7 +24,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/*
+Esta ruta utiliza
+controlador donde solo busca los ids de las personas que se siguen y los registros de los posts de esas personas a las que se siguen
+home.blade.php que esta conformado por
+    el layout principal (conformado por todo el HTML del nav, footer y encabezados, asi como de las directivas necesarias para livewire)
+    un componente para listar posts el cual es un HTML dentro de un foreach de Laravel
+una relación para conocer a los usuarios que nosotros seguimos user->followings
 
+*/
 Route::get('/',HomeController::class)->name('home');
 
 Route::get('/lista',[ListaController::class,'show'])->name('lista.show');

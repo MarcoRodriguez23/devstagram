@@ -3,10 +3,16 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--se usa yield para crear una seccion que se ira llenando en otro lado del proyecto-->
         <title>DevsTagram - @yield('titulo')</title>
+        <!--
+            stack para ir agregando estilos que pueden estar presentes solo en ciertas partes del documento
+            por ejemplo si usamos un estilo para alguna grafica o algun formulario no es necesario cargarlo o mandarlo a llamar en todo el documento, pero cuando sea necesario cargar la hoja de estilo esta se cargara en la parte superior del HTML correspondiente
+        -->
         @stack('styles')
         <link rel="stylesheet" href="{{ asset('css/app.css')}}">
         <script src="{{ asset('js/app.js')}}" defer></script>
+        <!--directiva para cargar los estilos requeridos por livewire-->
         @livewireStyles
     </head>
     <body class="bg-gray-100">
@@ -98,6 +104,7 @@
             DevStagram - Todos los derechos reservados {{now()->year}}
         </footer>
 
+        <!--directiva para cargar el JS requerido para livewire-->
         @livewireScripts
     </body>
 </html>
