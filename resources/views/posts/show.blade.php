@@ -9,6 +9,7 @@
         <div class="md:w-1/2">
             <img src="{{asset('uploads'.'/'.$post->imagen)}}" alt="imagen del post {{$post->titulo}}">
 
+            <!--componente de livewire para dar o quitar like-->
             <div class="p-3 flex items-center gap-4">
                 @auth
                     <livewire:like-post :post="$post"/>

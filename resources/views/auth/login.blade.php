@@ -14,9 +14,13 @@
             <form method="POST" action="{{route('login')}}">
                 @csrf
                 
+                <!--
+                aqui es necesario abrir un session('variable') para saber si se ha enviado un mensaje en especial, no como en el caso de los mensajes de Validate de Laravel que se envian directamente
+                -->
                 @if(session('mensaje'))
                     <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{session('mensaje')}}</p>
                 @endif
+                
                 <div class="mb-5">
                     <label for="email" class="mb-2 block uppercase text-gray-500 font-bold">Email</label>
                     <input 
